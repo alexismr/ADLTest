@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "ADLTest"
+    }
+  },
+  "defaultProject": "ADLTest",
+  "cli": {
+    "analytics": "ca26fb74-98bf-43b9-9c55-70b1e64e43f7"
+  }
 }
