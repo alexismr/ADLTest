@@ -1,0 +1,22 @@
+
+@import '../../../../styles/variables.scss';
+
+.header {
+    display: flex;
+    justify-content: flex-end;
+    font-family: $RThin;
+
+    &__item {
+        flex-flow: row wrap;
+        padding: 1em;
+    }
+    &__item:first-child {
+        width: 15%;
+        position: relative;
+        margin-right: auto;
+        font-family: $RTMedium;
+    }
+
+
+}
+

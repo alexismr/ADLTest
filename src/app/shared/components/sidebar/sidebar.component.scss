@@ -1,0 +1,19 @@
+
+.sidebar {
+        &__header {
+            font-size: 12px;
+            margin: auto;
+            text-align: center;
+        }
+
+        &__body {
+          padding: 1px 1px;
+          background: inherit;
+          overflow-y: hidden;
+          font-size: 10px;
+        
+        }
+        
+      }
+
+     
