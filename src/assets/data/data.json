@@ -405,7 +405,7 @@
     "status": "ACTIVE",
     "dueDate": "2019-12-03T10:32:40.465",
     "lastTransactionDate": "2019-12-03T10:32:40.25",
-    "roductAccountBalances":{
+    "productAccountBalances":{
       "saldo_canje": {
         "amount": 0
       },

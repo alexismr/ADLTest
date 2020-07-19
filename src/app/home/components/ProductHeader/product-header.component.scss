@@ -1,0 +1,21 @@
+.productheader
+    {
+         display: flex;
+         flex-direction: column;
+         &__carousel{
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              label{
+               position: relative;
+               margin-right: auto;
+              }
+         }
+         &__carouselComp{
+              height: 75px;
+              width: 40%;
+              
+         }
+
+    }
+    

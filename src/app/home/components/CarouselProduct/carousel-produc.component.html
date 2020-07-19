@@ -1,0 +1,13 @@
+<ngu-carousel  [inputs]="carouselConfig" [dataSource]="carouselItems">
+	<div *nguCarouselDef="let item;" class="item">
+        <div class="tile">  En Elementos de Ahorro  $ 5.2.0.0</div>  
+    </div>
+    <ul class="myPoint" NguCarouselPoint>
+        <li *ngFor="let j of pointNumbers;index" [class.active]="j==activePoint" (click)="moveTo(j)"></li>
+	</ul> 
+	<div NguCarouselNext class="rightRs">></div>
+	<div NguCarouselPrev class="leftRs"> <  </div> 
+
+</ngu-carousel>
+
+
