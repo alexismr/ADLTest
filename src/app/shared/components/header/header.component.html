@@ -3,16 +3,22 @@
     <div class="header__item"> <label> buenos dias , alexis </label></div>
     <div class="header__item">
         <label>  perfil</label> 
-        <fa-icon [icon]="faUserCircle"></fa-icon> <hr>  
+        <span class="header__item__line"> 
+             <fa-icon  size="2x" [icon]="faUserCircle"></fa-icon> 
+       </span>
+       
     </div>
     <div class="header__item">
-        <label>  alertas </label> 
-        <fa-icon [icon]="faBell"></fa-icon> <hr >  
-    
+        <label>  alertas  </label> 
+        <span class="header__item__line"> 
+            <fa-icon size="2x" [icon]="faBell"></fa-icon> 
+        </span>   
     </div>
     <div class="header__item">
         <label>  salida Segura </label>
-        <fa-icon [icon]="faSignOutAlt"></fa-icon>
+        <span class="header__item__exit"> 
+           <fa-icon size="2x" [icon]="faSignOutAlt"></fa-icon>
+         </span>
     </div>
 
 </div>

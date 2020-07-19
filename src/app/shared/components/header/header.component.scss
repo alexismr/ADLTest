@@ -7,14 +7,43 @@
     font-family: $RThin;
 
     &__item {
-        flex-flow: row wrap;
+       display: flex;
+       align-items: center;
         padding: 1em;
+         cursor: pointer;
+        &__line{
+            justify-items: center;
+            font-size: 15px;
+            color: rgb(146, 146, 165);
+        }
+
+    
+        &__line::after{
+            content: "|";
+            font-size: 35px;
+            margin-left: 5px;
+        }
+
+        &__exit{
+            justify-items: center;
+            font-size: 15px;
+            color: rgb(146, 146, 165);
+            cursor: pointer;
+        }
+
+        label{
+            margin-right: 5px;
+          
+        }
+
+ 
+
     }
     &__item:first-child {
-        width: 15%;
+       
         position: relative;
         margin-right: auto;
-        font-family: $RTMedium;
+        font-family: $RTBold;
     }
 
 

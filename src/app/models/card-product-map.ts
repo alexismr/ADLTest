@@ -173,6 +173,7 @@ export interface RoductAccountBalances    {
 
 
 export class Product    {
+      img: string;
       accountInformation: AccountInformation
       locked: boolean
       id: string

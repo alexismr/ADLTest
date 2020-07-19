@@ -21,7 +21,7 @@ export class LoadDataService {
         private utilitiesService :UtilitiesService
         )  { }
     
-    getloadData() :Observable<string> {  
+    getloadData$() :Observable<string> {  
        return new Observable(subscriber => {
         this.http.get('../assets/data/data.json').subscribe( (data:any) =>{
             this.productList = this.utilitiesService.GroutByProduct(data.product,this.configuration.BackTypeFilter  )

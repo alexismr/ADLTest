@@ -13,11 +13,6 @@ export class ProductsComponent implements OnInit {
   private allProducts: boolean = false;
   products:Array<Product>;
 
-   get dataHeader():string
-    {
-        return this.products?`${this.products[0].typeAccount } ( ${this.products.length})`:"";
-    }
-
   constructor(private dataService : LoadDataService , private productService:ProductService) { }
 
   ngOnInit(): void {
@@ -26,7 +21,7 @@ export class ProductsComponent implements OnInit {
 
   private getAllData(): void {
     this.dataService
-      .getloadData().subscribe(
+      .getloadData$().subscribe(
          () => this.getProducts(this.allProducts),
          error => console.log(error)
          );
@@ -34,11 +29,15 @@ export class ProductsComponent implements OnInit {
 
   private getProducts(allProducts: boolean)
   {
-    
-    
-    debugger;
-     this.products = this.productService
-      .getProducts(allProducts);
+    this.productService.refresDataroduct$.subscribe(
+      (data)=>{
+        this.products = data
+      } ,
+       error => console.log(error)
+    );
+
+    this.productService.getProducts(allProducts)
+      
 
   }
 

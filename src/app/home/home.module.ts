@@ -1,8 +1,11 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule ,DatePipe, CurrencyPipe} from '@angular/common';
+
+
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import { NguCarouselModule } from '@ngu/carousel';
@@ -24,7 +27,8 @@ import { CarouselProducComponent } from './components/CarouselProduct/carousel-p
         MatButtonModule,
         HomeRoutes,
         sharedModule,
-        NguCarouselModule
+        NguCarouselModule,
+        FontAwesomeModule
     ],
     declarations: [
         ProductHeaderComponent,
@@ -34,7 +38,12 @@ import { CarouselProducComponent } from './components/CarouselProduct/carousel-p
     ] ,
     exports: [
         ProductsComponent
+    ],
+    providers: [
+        DatePipe,
+        CurrencyPipe
     ]
+    
 })
 
 export class HomeModule { }

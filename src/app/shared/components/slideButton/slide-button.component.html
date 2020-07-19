@@ -2,8 +2,8 @@
     <label> {{title}} </label>
     <mat-slide-toggle
     class="example-margin"
-    [color]="color"
-    [checked]=''
+    (click)="onClick()"
+    [checked]='checked'
     [disabled]="disabled">
      </mat-slide-toggle>
 </div>

@@ -1,21 +1,20 @@
 
 
     <mat-card   class="product-card"  *ngFor="let item of ArrayProduct">
-        <mat-card-header>
-          <div mat-card-avatar class="product-header-image"></div>
-        </mat-card-header>
+
+      <div class="productHeader">      
+          <span  class="productHeader__icon">
+            <fa-icon  size="2x" class="fas" [icon]="onLoadImg(item.accountInformation.productType)"></fa-icon> 
+          </span>       
+         <span class="productHeader__VerDetalle">  Ver Detalle</span>
+      </div>
         <mat-card-content>
-          <mat-card-title> {{item.typeAccount}}</mat-card-title>
-          <mat-card-subtitle>Nro. {{item.id}}</mat-card-subtitle>
-          <p>
-            saldo disponible 
-          </p>
+          <mat-card-title> {{item.accountInformation.productType}}   </mat-card-title>
+          <mat-card-subtitle>Nro. {{item.accountInformation.id}}</mat-card-subtitle>
+          <p>saldo disponible </p>
           <div *ngIf="item.productAccountBalances &&  item.productAccountBalances.saldo_disponible">
-             $ {{item.productAccountBalances.saldo_disponible.amount}} 
-          </div>
+              {{item.productAccountBalances.saldo_disponible.amount | currency}} 
+            </div>
         </mat-card-content>
-        <mat-card-actions>
-          <button mat-button>LIKE</button>
-          <button mat-button>SHARE</button>
-        </mat-card-actions>
+
       </mat-card>

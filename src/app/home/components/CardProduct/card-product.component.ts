@@ -1,5 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { CurrencyPipe } from '@angular/common';
 import { Product } from 'src/app/models/card-product-map';
+import { faCreditCard ,faCertificate , faAddressCard, faIdCard, faWindowRestore,faInfo} from '@fortawesome/free-solid-svg-icons';
+import { Configuration } from 'src/app/app.constants';
 
 @Component({
   selector: 'app-card-product',
@@ -8,10 +11,27 @@ import { Product } from 'src/app/models/card-product-map';
 })
 export class CardProductComponent implements OnInit {
   @Input() ArrayProduct:Array<Product>;
-  constructor() { }
+ 
+  faCreditCard = faCreditCard;
+  faCertificate = faCertificate;
+  faAddressCard = faAddressCard;
+  faIdCard = faIdCard;
+  faWindowRestore= faWindowRestore;
+  faInfo=faInfo;
+
+
+
+  constructor( private configuration: Configuration ,
+     private currencyPipe: CurrencyPipe) { }
 
   ngOnInit(): void {
-    
-  }
+
+
+   }
+
+   onLoadImg(imgKey :string){
+     return this[this.configuration.getImgProduct(imgKey)];
+   }
+
 
 }

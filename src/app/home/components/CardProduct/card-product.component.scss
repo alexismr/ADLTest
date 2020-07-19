@@ -1,9 +1,33 @@
+
+
+
+
 .product-card {
     margin: 2px 3px 4px;
-    max-width: 250px;
+    min-width: 250px;
  }
  
- .product-header-image {
-   background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-   background-size: cover;
+ .productHeader {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    &__icon{
+      font-size: 25px;
+      color: rgb(146, 146, 165);
+    }
+    &__VerDetalle{
+      font-size: 11px;
+      height: fit-content;
+      color: #348ca2;
+      cursor: pointer;
+    }
+
+    &__VerDetalle::after {
+      content: ">";
+      margin-left: 5px;
+    }
  }
+
+
+

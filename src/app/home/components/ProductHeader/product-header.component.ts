@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductService } from 'src/app/core/seervices/product.service';
 
 @Component({
   selector: 'app-product-header',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductHeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(private productService:ProductService) { }
 
   ngOnInit(): void {
+  }
+
+  onRefreshProducts($event:boolean){
+    this.productService.getProducts($event);
   }
 
 }

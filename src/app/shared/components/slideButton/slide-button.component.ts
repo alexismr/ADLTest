@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-slide-button',
@@ -8,8 +8,9 @@ import { Component, OnInit, Input } from '@angular/core';
 export class SlideButtonComponent implements OnInit {
  
   @Input() title = "Mostar otros Productos ";
- 
-  color: "blue";
+  @Output() onChecked = new EventEmitter<boolean>();
+    
+  select = false;
   checked = false;
   disabled = false;
 
@@ -17,5 +18,14 @@ export class SlideButtonComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+
+  onClick()
+  {
+    this.select =! this.select;
+    this.onChecked.emit(this.select);
+  }
+  
+
 
 }

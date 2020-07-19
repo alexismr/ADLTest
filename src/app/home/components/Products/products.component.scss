@@ -1,8 +1,11 @@
-
+.cardItemContainer{
+    display: flex;
+    flex-flow: row wrap;
+}
 .cardItems
 {
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: column wrap;
    
 }
 
