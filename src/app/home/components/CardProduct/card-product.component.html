@@ -23,6 +23,13 @@
                     </label>
                   </div>
            
+
+                  <div>  Banco : 
+                    <label> 
+                    {{item.accountInformation.bank }} 
+                    </label>
+                  </div>
+
                   <div>  Fecha Ultima Transaccion: 
                     <label> 
                      {{ item.lastTransactionDate| stringDate  }}  
@@ -33,14 +40,15 @@
 
               <div *ngIf="item.cardcredit"> 
 
-                 <div *ngIf="item.dueDate" class="clas1"> 
-                  <label> no se pudo determinar la fecha de pago </label> 
-                  <button mat-stroked-button color="primary">PAGAR</button>
+                 <div *ngIf="item.dueDate" > 
+                  <p>pago total :  {{item.productAccountBalances.pago_total_pesos.amount | currency}} </p>
+                   <div class="productHeader__pay"> 
+                      <button mat-stroked-button color="primary">PAGAR</button>
+                   </div>
                   </div> 
-
-              
-                 <div  *ngIf="(item.dueDate) == false"class="clas2"> 
-                  <app-progressbar [coverage]="50"> </app-progressbar>
+                 <div  *ngIf="(!item.dueDate)"> 
+                     <label> saldo Gastado : {{item.productAccountBalances.pago_total_pesos.amount | currency}}</label>  
+                  <app-progressbar [coverage]="onValidateCoverage(item.productAccountBalances.cupo_total.amount ,item.productAccountBalances.pago_total_pesos.amount )"> </app-progressbar>
                 </div> 
               </div>
             </mat-card-content>

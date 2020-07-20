@@ -34,6 +34,18 @@
       content: ">";
       margin-left: 5px;
     }
+
+    &__pay{
+      display: block;
+      
+      button{
+        width: 100%;
+      }
+
+    }
+ }
+ .primary{
+   width: 100%;
  }
 
 

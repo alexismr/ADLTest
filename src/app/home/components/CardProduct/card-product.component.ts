@@ -41,15 +41,13 @@ export class CardProductComponent implements OnInit {
     item.isShown = !item.isShown;
  }
 
- onValidateCoverage(value1 , value2)
+ onValidateCoverage(cupototal:number , totalpagar:number):number
  {
+  ///return cupototal && totalpagar? Math.round(((totalpagar/ cupototal)*100)):0;
 
-       debugger;
-       let test = value1;
-
+  return 80;
  }
-  
-  
+
    
 
 }
