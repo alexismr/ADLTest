@@ -14,7 +14,7 @@
                    {{item.productAccountBalances.saldo_disponible.amount | currency}} 
                 </div>
 
-             <div [ngClass]="(item.isShown)?'show':'hidden'">
+             <div *ngIf="(item.isShown)">
 
                    <label>  informacion adicional de la tarjeta </label>
                   <div>  Estado : 
@@ -33,14 +33,15 @@
 
               <div *ngIf="item.cardcredit"> 
 
-                <div class="clas1"> 
-                  <app-progressbar [coverage]="50"> </app-progressbar>
-                </div>
-
-                <!-- <div class="clas2"> 
-                   <label> no se pudo determinar la fecha de pago </label> 
+                 <div *ngIf="item.dueDate" class="clas1"> 
+                  <label> no se pudo determinar la fecha de pago </label> 
                   <button mat-stroked-button color="primary">PAGAR</button>
-                </div> -->
+                  </div> 
+
+              
+                 <div  *ngIf="(item.dueDate) == false"class="clas2"> 
+                  <app-progressbar [coverage]="50"> </app-progressbar>
+                </div> 
               </div>
             </mat-card-content>
           </mat-card> 

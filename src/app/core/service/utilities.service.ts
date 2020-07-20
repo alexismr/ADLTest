@@ -7,7 +7,7 @@ export class UtilitiesService {
     
     }
     
-   GroutByProduct(arr, criteria)
+   GroupByProduct(arr, criteria)
     {   
         return arr.reduce((obj, item)=> { 
            // item.carcredit = 
@@ -26,7 +26,7 @@ export class UtilitiesService {
         },{});
     }
 
-    GroutByProductAllProsuct(arr, criteria)
+    GroupByProductAllProsuct(arr, criteria)
     {   
         let obj = {};
         let configuration = new Configuration();

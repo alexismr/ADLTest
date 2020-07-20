@@ -24,12 +24,16 @@ export class LoadDataService {
     getloadData$() :Observable<string> {  
        return new Observable(subscriber => {
         this.http.get('../assets/data/data.json').subscribe( (data:any) =>{
-            this.productList = this.utilitiesService.GroutByProduct(data.product,this.configuration.BackTypeFilter  )
+            this.productList = this.utilitiesService.GroupByProduct(data.product,this.configuration.BackTypeFilter  )
             subscriber.next("200");
            },
            error =>  subscriber.error(error),
            );
         });     
+    }
+
+    getProductList(){
+        return this.productList;
     }
 
 }
