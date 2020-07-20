@@ -49,3 +49,45 @@
 
 }
 
+@mixin item-m {
+    justify-items: center;
+    font-size: 10px;
+    color: #6565aa;
+    font-size: 7px;
+  }
+
+
+.headerM {
+    display: flex;
+    justify-content: flex-end;
+    font-family: $RThin;
+
+    &__item {
+       display: flex;
+       align-items: center;
+        padding: 1em;
+         cursor: pointer;
+        &__line{
+            @include item-m;
+        }
+    
+        &__exit{
+            @include item-m;
+        }
+
+        label{
+            margin-right: 4px;
+
+        }
+    }
+    &__item:first-child {
+        position: relative;
+        font-family: $RTBold;
+        label{
+            margin-right: 0px;
+
+        }
+    }
+
+
+}

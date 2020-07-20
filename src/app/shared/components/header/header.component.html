@@ -1,22 +1,24 @@
-<div class="header"> 
+
+
+<div  [ngClass]="classResponsive" class="header"  > 
     
-    <div class="header__item"> <label> buenos dias , alexis </label></div>
-    <div class="header__item">
+    <div [ngClass]="classResponsive+'__item'"> <label> buenos dias , alexis </label></div>
+    <div [ngClass]="classResponsive+'__item'">
         <label>  perfil</label> 
-        <span class="header__item__line"> 
+        <span  [ngClass]="classResponsive+'__item__line'"> 
              <fa-icon  size="2x" [icon]="faUserCircle"></fa-icon> 
        </span>
        
     </div>
-    <div class="header__item">
+    <div [ngClass]="classResponsive+'__item'">
         <label>  alertas  </label> 
-        <span class="header__item__line"> 
+        <span   [ngClass]="classResponsive+'__item__line'"> 
             <fa-icon size="2x" [icon]="faBell"></fa-icon> 
         </span>   
     </div>
-    <div class="header__item">
+    <div [ngClass]="classResponsive+'__item'">
         <label>  salida Segura </label>
-        <span class="header__item__exit"> 
+        <span [ngClass]="classResponsive+'__item__exit'"> 
            <fa-icon size="2x" [icon]="faSignOutAlt"></fa-icon>
          </span>
     </div>

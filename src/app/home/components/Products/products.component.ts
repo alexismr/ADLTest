@@ -3,6 +3,7 @@ import { Product} from '../../../models/card-product-map';
 // services 
 import { LoadDataService } from 'src/app/core/service/load-data.service';
 import { ProductService } from 'src/app/core/service/product.service';
+import { BreakpointObserver } from '@angular/cdk/layout';
 
 @Component({
   selector: 'app-products',
@@ -11,12 +12,13 @@ import { ProductService } from 'src/app/core/service/product.service';
 })
 export class ProductsComponent implements OnInit {
    allProducts: boolean = false;
-  products:Array<Product>;
-
-  constructor(private dataService : LoadDataService , private productService:ProductService) { }
+   products:Array<Product>;
+   classResponsive: string;
+  constructor(private dataService : LoadDataService , private productService:ProductService ,private breakpointObserver: BreakpointObserver ) { }
 
   ngOnInit(): void {
     this.getAllData();
+    this.isMobile();
   }
 
   private getAllData(): void {
@@ -34,6 +36,14 @@ export class ProductsComponent implements OnInit {
        error => console.log(error)
     );
     this.productService.getProducts(allProducts)     
+  }
+
+
+  isMobile()
+  {
+    this.breakpointObserver.observe('(max-width: 700px)').subscribe(result => {
+      this.classResponsive = result.matches ? "cardItemContainerM": "cardItemContainer"; 
+    });
   }
 
 
