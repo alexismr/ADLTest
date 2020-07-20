@@ -1,9 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import { Configuration } from '../app.constants';
-import { LoadDataService } from './seervices/load-data.service';
-import { ProductService } from './seervices/product.service';
-import { UtilitiesService } from './seervices/utilities.service';
+import { LoadDataService } from './service/load-data.service';
+import { ProductService } from './service/product.service';
+import { UtilitiesService } from './service/utilities.service';
 @NgModule({
     imports: [
         CommonModule

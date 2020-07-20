@@ -13,6 +13,8 @@ export class SidebarComponent implements OnInit{
 
   @Input() id: string;
   @Input() title = "";
+
+  options = ["PAGOS","TRANSFERENCIAS","CERTIFICADOS","SEGURIDAD"]
   
   constructor() {
     

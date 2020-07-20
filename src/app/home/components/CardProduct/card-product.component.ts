@@ -4,10 +4,13 @@ import { Product } from 'src/app/models/card-product-map';
 import { faCreditCard ,faCertificate , faAddressCard, faIdCard, faWindowRestore,faInfo} from '@fortawesome/free-solid-svg-icons';
 import { Configuration } from 'src/app/app.constants';
 
+
 @Component({
   selector: 'app-card-product',
   templateUrl: './card-product.component.html',
   styleUrls: ['./card-product.component.scss']
+  ,
+  
 })
 export class CardProductComponent implements OnInit {
   @Input() ArrayProduct:Array<Product>;
@@ -33,5 +36,20 @@ export class CardProductComponent implements OnInit {
      return this[this.configuration.getImgProduct(imgKey)];
    }
 
+
+  toggleClass(item) {
+    item.isShown = !item.isShown;
+ }
+
+ onValidateCoverage(value1 , value2)
+ {
+
+       debugger;
+       let test = value1;
+
+ }
+  
+  
+   
 
 }

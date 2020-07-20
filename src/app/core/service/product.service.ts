@@ -22,12 +22,11 @@ export class ProductService {
         }
 
         getProducts(flagAllBanks: boolean):void{     
+
                 this.products = flagAllBanks?
-                    Object.values(this.loadDataService.productList).filter(item =>{
-                      return this.utilitiesService.GroutByProduct(item ,this.configuration.ProductTypeFilter );
-                    })
-                     : this.utilitiesService.GroutByProduct(this.loadDataService.productList[this.configuration.DefaultProduct],this.configuration.ProductTypeFilter);
-                  this.refresDataroduct.next(Object.values(this.products));
+                      Object.values(this.utilitiesService.GroutByProductAllProsuct(Object.values(this.loadDataService.productList),this.configuration.ProductTypeFilter))
+                     : Object.values(this.utilitiesService.GroutByProduct(this.loadDataService.productList[this.configuration.DefaultProduct],this.configuration.ProductTypeFilter));
+                     this.refresDataroduct.next(this.products);
        }
 
 

@@ -6,7 +6,7 @@
       "productType": "CERTIFIED_DEPOSIT_TERM",
       "bank": "BANCO_3"
     },
-    "locked": true,
+    "locked": false,
     "id": "3001101234845",
     "typeAccount": "CERTIFIED_DEPOSIT_TERM",
     "openedDate": "2002-02-27T00:00:00",

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Product} from '../../../models/card-product-map';
 // services 
-import { LoadDataService } from 'src/app/core/seervices/load-data.service';
-import { ProductService } from 'src/app/core/seervices/product.service';
+import { LoadDataService } from 'src/app/core/service/load-data.service';
+import { ProductService } from 'src/app/core/service/product.service';
 
 @Component({
   selector: 'app-products',
@@ -10,7 +10,7 @@ import { ProductService } from 'src/app/core/seervices/product.service';
   styleUrls: ['./products.component.scss']
 })
 export class ProductsComponent implements OnInit {
-  private allProducts: boolean = false;
+   allProducts: boolean = false;
   products:Array<Product>;
 
   constructor(private dataService : LoadDataService , private productService:ProductService) { }
@@ -30,15 +30,10 @@ export class ProductsComponent implements OnInit {
   private getProducts(allProducts: boolean)
   {
     this.productService.refresDataroduct$.subscribe(
-      (data)=>{
-        this.products = data
-      } ,
+      (data)=>this.products = data,
        error => console.log(error)
     );
-
-    this.productService.getProducts(allProducts)
-      
-
+    this.productService.getProducts(allProducts)     
   }
 
 

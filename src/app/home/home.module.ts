@@ -18,6 +18,7 @@ import { CardProductComponent } from './components/CardProduct/card-product.comp
 import { sharedModule } from '../shared/sharedModule';
 import { CarouselProducComponent } from './components/CarouselProduct/carousel-produc.component';
 
+
 @NgModule({
     imports: [
         CommonModule,

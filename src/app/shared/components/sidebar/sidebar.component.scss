@@ -1,9 +1,12 @@
-
+@import '../../../../styles/variables.scss';
 .sidebar {
         &__header {
+             padding: 4px;
             font-size: 12px;
             margin: auto;
             text-align: center;
+            font-family: $RThin;
+            cursor: pointer;
         }
 
         &__body {

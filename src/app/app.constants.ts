@@ -20,4 +20,11 @@ export class Configuration {
          return   vales[productType] ? vales[productType] :vales.DEFAULT; 
    }
 
+   public  isCreditCar(cardType):boolean
+   {
+         let  credicar = "CREDIT_CARD";
+         return cardType == credicar ? true:false;
+   }
+
+
 }

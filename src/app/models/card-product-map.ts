@@ -173,6 +173,8 @@ export interface RoductAccountBalances    {
 
 
 export class Product    {
+      cardcredit:boolean;
+      isShown:boolean;
       img: string;
       accountInformation: AccountInformation
       locked: boolean

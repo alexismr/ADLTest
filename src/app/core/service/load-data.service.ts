@@ -25,7 +25,7 @@ export class LoadDataService {
        return new Observable(subscriber => {
         this.http.get('../assets/data/data.json').subscribe( (data:any) =>{
             this.productList = this.utilitiesService.GroutByProduct(data.product,this.configuration.BackTypeFilter  )
-            subscriber.next("OK");
+            subscriber.next("200");
            },
            error =>  subscriber.error(error),
            );

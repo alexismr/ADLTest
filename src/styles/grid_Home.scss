@@ -3,7 +3,7 @@
     display: grid;
     margin-top: 0px;
     grid-template-columns: [x0] 1.50fr [x1] 0.50fr [x2] 9fr [x3] 0.50fr [x4];
-    grid-template-rows: [top-line] 1fr [top-medium-line] 5fr [conten-medium-line]  4fr [bottom-medium-line] 1fr [bottom-line];
+    grid-template-rows: [top-line] 1fr [top-medium-line] 7fr [conten-medium-line]  4fr [bottom-medium-line] 1fr [bottom-line];
     height: 99vh;
 
 
@@ -17,13 +17,13 @@
       }
       &__sidebar {
         grid-column: x0 / x1;
-        grid-row: top-line / bottom-medium-lin;
+        grid-row: top-line / conten-medium-line;
         -webkit-box-shadow: 5px 3px 0px -1px rgba(150,150,150,0.55); 
         box-shadow: 5px 3px 0px -1px rgba(150,150,150,0.55);
       }
       &__footer {
         grid-column: x0 / x3;
-        grid-row: bottom-medium-line /bottom-line;
+        grid-row: bottom-line;
       }
 
 }
@@ -31,8 +31,9 @@
 .options_sidebar {
     display: flex;
     flex-direction: column ;
-    &> * {
-      min-width: 70%;
+    margin-top: 50px;
+    hr{
+      width: 85%;
     }
 }
 
