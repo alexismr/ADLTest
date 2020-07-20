@@ -22,20 +22,12 @@ export class ProductService {
         }
 
         getProducts(flagAllBanks: boolean):void{     
-
-                this.products = flagAllBanks?
-                      Object.values(this.utilitiesService.GroupByProductAllProsuct(Object.values(this.loadDataService.productList),this.configuration.ProductTypeFilter))
-                     : Object.values(this.utilitiesService.GroupByProduct(this.loadDataService.productList[this.configuration.DefaultProduct],this.configuration.ProductTypeFilter));
-                     this.refresDataroduct.next(this.products);
-
-
-
-                    //  this.products = flagAllBanks?
-                    //  Object.values(this.utilitiesService.GroupByProductAllProsuct(
-                    //      Object.values(this.loadDataService.getProductList()),
-                    //      this.configuration.getProductFilter()))
-                    // : Object.values(this.utilitiesService.GroupByProduct(this.loadDataService.productList[this.configuration.DefaultProduct],this.configuration.ProductTypeFilter));
-                    // this.refresDataroduct.next(this.products);
+                    this.products = flagAllBanks?
+                    Object.values(this.utilitiesService.GroupByProductAllProsuct(
+                    Object.values(this.loadDataService.getProductList()),
+                    this.configuration.getProductFilter()))
+                    : Object.values(this.utilitiesService.GroupByProduct(this.loadDataService.productList[this.configuration.DefaultProduct],this.configuration.ProductTypeFilter));
+                    this.refresDataroduct.next(this.products);
        }
 
 

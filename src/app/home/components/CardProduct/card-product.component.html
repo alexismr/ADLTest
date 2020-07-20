@@ -1,60 +1,61 @@
 
      <mat-card   class="product-card"   *ngFor="let item of ArrayProduct" >
-          <div class="productHeader">      
-              <span  class="productHeader__icon">
-                <fa-icon  size="2x" class="fas" [icon]="onLoadImg(item.accountInformation.productType)"></fa-icon> 
-              </span>       
-             <span class="productHeader__VerDetalle" > <label (click)="toggleClass(item)"> {{ (item.isShown)? 'Cerrar X': 'Ver Detalle' }}</label>  </span>
-          </div>
-            <mat-card-content>
-              <div class="productHeader__title"> {{item.accountInformation.productType | visamaster :item.cardcredit :item.id }}   </div>
-              <mat-card-subtitle>Nro. {{item.id | creditcardnumber : item.cardcredit :item.id}}</mat-card-subtitle>
-              <div *ngIf="item.productAccountBalances &&  item.productAccountBalances.saldo_disponible">
-                <p>saldo disponible </p>
-                   {{item.productAccountBalances.saldo_disponible.amount | currency}} 
-                </div>
-
-             <div *ngIf="(item.isShown)">
-
-                   <label>  informacion adicional de la tarjeta </label>
-                  <div>  Estado : 
-                    <label> 
-                    {{item.locked ? 'bloqueado' :'Habilitado'  }} 
-                    </label>
-                  </div>
-           
-
-                  <div>  Banco : 
-                    <label> 
-                    {{item.accountInformation.bank }} 
-                    </label>
-                  </div>
-
-                  <div>  Fecha Ultima Transaccion: 
-                    <label> 
-                     {{ item.lastTransactionDate| stringDate  }}  
-                    </label>  
-                  </div>
-                   
-              </div> 
-
-              <div *ngIf="item.cardcredit"> 
-
-                 <div *ngIf="item.dueDate" > 
-                  <p>pago total :  {{item.productAccountBalances.pago_total_pesos.amount | currency}} </p>
-                   <div class="productHeader__pay"> 
-                      <button mat-stroked-button color="primary">PAGAR</button>
-                   </div>
-                  </div> 
-                 <div  *ngIf="(!item.dueDate)"> 
-                     <label> saldo Gastado : {{item.productAccountBalances.pago_total_pesos.amount | currency}}</label>  
-                  <app-progressbar [coverage]="onValidateCoverage(item.productAccountBalances.cupo_total.amount ,item.productAccountBalances.pago_total_pesos.amount )"> </app-progressbar>
-                </div> 
+      <div class="productHeader">      
+          <span  class="productHeader__icon">
+            <fa-icon  size="2x" class="fas" [icon]="onLoadImg(item.accountInformation.productType)"></fa-icon> 
+          </span>       
+         <span class="productHeader__VerDetalle" > <label (click)="toggleClass(item)"> {{ (item.isShown)? 'Cerrar X': 'Ver Detalle' }}</label>  </span>
+      </div>
+        <mat-card-content>
+          <div class="productHeader__title"> {{item.accountInformation.productType | visamaster :item.cardcredit :item.id }}   </div>
+          <mat-card-subtitle>Nro. {{item.id | creditcardnumber : item.cardcredit :item.id}}</mat-card-subtitle>
+          <div *ngIf="item.productAccountBalances &&  item.productAccountBalances.saldo_disponible">
+            <p>Saldo Disponible: </p>
+               {{item.productAccountBalances.saldo_disponible.amount | currency}} 
+            </div>
+            
+         <div *ngIf="(item.isShown)">
+          <p>INFORMACIÓN ADICIONAL: </p>
+              <div>  Estado : 
+                <label> 
+                {{item.locked ? 'bloqueado' :'Habilitado'  }} 
+                </label>
               </div>
-            </mat-card-content>
-          </mat-card> 
-
-
-
        
-          
+
+              <div>  Banco : 
+                <label> 
+                {{item.accountInformation.bank }} 
+                </label>
+              </div>
+
+              <div>  Fecha Ultima Transaccion: 
+                <label> 
+                 {{ item.lastTransactionDate| stringDate  }}  
+                </label>  
+              </div>
+               
+          </div> 
+
+          <div *ngIf="item.cardcredit"> 
+
+             <div *ngIf="item.dueDate" > 
+              <p>Pago Total :  {{item.productAccountBalances.pago_total_pesos.amount | currency}} </p>
+              <p>Fecha de pago: {{item.dueDate | stringDate}} </p>
+               <div class="productHeader__pay"> 
+                  <button mat-stroked-button color="primary">PAGAR</button>
+               </div>
+              </div> 
+             <div  *ngIf="(!item.dueDate)"> 
+                 <label>Gastado : {{item.productAccountBalances.pago_total_pesos.amount | currency}}</label>  
+                 <p>Cupo Total : {{item.productAccountBalances.cupo_total.amount | currency}}</p>  
+              <app-progressbar [coverage]="onValidateCoverage(item.productAccountBalances.cupo_total.amount ,item.productAccountBalances.pago_total_pesos.amount )"> </app-progressbar>
+            </div> 
+          </div>
+        </mat-card-content>
+      </mat-card> 
+
+
+
+   
+      
