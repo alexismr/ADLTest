@@ -23,7 +23,7 @@ export class Configuration {
    public  isCreditCar(cardType):boolean
    {
          let  credicar = "CREDIT_CARD";
-         return cardType == credicar ? true:false;
+         return cardType == credicar;
    }
 
    getProductFilter(){

@@ -32,7 +32,7 @@ describe('LoadDataService', () => {
         expect(service).toBeTruthy();
     });
 
-    it('getloadData should return this data in productList', 
+    it('should return this data in productList', 
     () => {
         let mock = {
             "product": []
