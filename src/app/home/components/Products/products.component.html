@@ -2,11 +2,9 @@
 <app-product-header></app-product-header>
 
 <ng-container *ngFor="let item of products"> 
-    <div [ngClass]="classResponsive">
+    <div> {{item[0].accountInformation.productType }} ( {{item.length}})    </div> 
+    <app-card-product  [ArrayProduct]="item" [ngClass]="classResponsive" >  </app-card-product>
 
-     <div> {{item[0].accountInformation.productType }} ( {{item.length}})    </div> 
-        <app-card-product  [ArrayProduct]="item" [ngClass]="classResponsive">  </app-card-product>
-    </div>
 
 </ng-container>
 
