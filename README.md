@@ -59,9 +59,7 @@ Solo se crearon 2 breakpoints  básicos uno en el componete header y el otro en 
 ## URL 
 
 http://alexistestadl.brazilsouth.azurecontainer.io/
-=======
   
   
 
->>>>>>> 03f0c293ffab4826223772c7452af31b31d72e02
 # ADLTest
