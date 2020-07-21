@@ -3,7 +3,7 @@ import { Configuration } from '../../app.constants';
 
 @Injectable()
 export class UtilitiesService {
-    constructor(configuration:Configuration) { 
+    constructor(private configuration:Configuration) { 
     
     }
     
@@ -13,8 +13,7 @@ export class UtilitiesService {
            // item.carcredit = 
             var key = item.accountInformation[criteria];
            
-            let configuration = new Configuration();
-            item.cardcredit =  configuration.isCreditCar(key)? true:false;
+            item.cardcredit =  this.configuration.isCreditCar(key)? true:false;
             
          
             if (!obj.hasOwnProperty(key)) {
@@ -26,16 +25,15 @@ export class UtilitiesService {
         },{});
     }
 
-    GroupByProductAllProsuct(arr, criteria)
+    GroupByProductAllProduct(arr, criteria)
     {   
         let obj = {};
-        let configuration = new Configuration();
         
          Object.values(arr).map(item =>{
          Object.values(item).forEach(element => {
                 var key = element.accountInformation[criteria];
                 
-                element.cardcredit =  configuration.isCreditCar(key)? true:false;
+                element.cardcredit =  this.configuration.isCreditCar(key)? true:false;
 
                 if (!obj.hasOwnProperty(key)) {
                     obj[key] = [];

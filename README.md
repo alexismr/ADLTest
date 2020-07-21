@@ -48,6 +48,7 @@ Solo se crearon 2 breakpoints  básicos uno en el componete header y el otro en 
 
   - para el campo fecha de pago se tomo  el como referencia el campo dueDate del data.json
   - se modifico la informacion del objeto 5201897302970640 del banco 3 con el fin de mostar la barra progreso 
+<<<<<<< HEAD
 
 ## soporte docker 
   - crear contenedor
@@ -58,4 +59,9 @@ Solo se crearon 2 breakpoints  básicos uno en el componete header y el otro en 
 ## URL 
 
 http://alexistestadl.brazilsouth.azurecontainer.io/
+=======
+  
+  
+
+>>>>>>> 03f0c293ffab4826223772c7452af31b31d72e02
 # ADLTest

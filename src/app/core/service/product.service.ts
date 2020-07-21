@@ -23,7 +23,7 @@ export class ProductService {
 
         getProducts(flagAllBanks: boolean):void{     
                     this.products = flagAllBanks?
-                    Object.values(this.utilitiesService.GroupByProductAllProsuct(
+                    Object.values(this.utilitiesService.GroupByProductAllProduct(
                     Object.values(this.loadDataService.getProductList()),
                     this.configuration.getProductFilter()))
                     : Object.values(this.utilitiesService.GroupByProduct(this.loadDataService.productList[this.configuration.DefaultProduct],this.configuration.ProductTypeFilter));

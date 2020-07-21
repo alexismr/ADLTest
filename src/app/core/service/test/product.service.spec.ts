@@ -35,8 +35,8 @@ describe('ProductService', () => {
         expect(service).toBeTruthy();
     });
 
-    it('should be product is valid', () => {
-        const getListSpyProduct = spyOn(<any>serviceUtilities, 'GroupByProductAllProsuct').and.returnValue(of(''));
+    it('should called products is valid', () => {
+        const getListSpyProduct = spyOn(<any>serviceUtilities, 'GroupByProductAllProduct').and.returnValue(of(''));
         spyOn(<any> serviceLoadData, 'getProductList').and.returnValue({});
         spyOn(<any>serviceUtilities, 'GroupByProduct').and.returnValue(of(''));
         spyOn(<any>configuration, 'getProductFilter').and.returnValue(of('productType'));
