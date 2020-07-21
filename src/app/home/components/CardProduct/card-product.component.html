@@ -8,32 +8,34 @@
       </div>
         <mat-card-content>
           <div class="productHeader__title"> {{item.accountInformation.productType | visamaster :item.cardcredit :item.id }}   </div>
-          <mat-card-subtitle>Nro. {{item.id | creditcardnumber : item.cardcredit :item.id}}</mat-card-subtitle>
+          <mat-card-subtitle>Nro. {{item.id | creditcardnumber : item.cardcredit}}</mat-card-subtitle>
           <div *ngIf="item.productAccountBalances &&  item.productAccountBalances.saldo_disponible">
             <p>Saldo Disponible: </p>
                {{item.productAccountBalances.saldo_disponible.amount | currency}} 
             </div>
             
-         <div *ngIf="(item.isShown)">
-          <p>INFORMACIÓN ADICIONAL: </p>
-              <div>  Estado : 
-                <label> 
-                {{item.locked ? 'bloqueado' :'Habilitado'  }} 
-                </label>
-              </div>
+         <div *ngIf="(item.isShown)" class="cardDetail"  >
+          <p>INFORMACIÓN ADICIONAL </p>
+                <div  class="cardDetail__item"  >
+                  <span   class="cardDetail__item__title">  Estado :   </span>
+                    <label> 
+                      {{item.locked ? 'bloqueado' :'Habilitado'  }} 
+                    </label>
+                 </div>
+                 
+                 <div  class="cardDetail__item"  >
+                  <span   class="cardDetail__item__title">  Banco :   </span>
+                    <label> 
+                      {{item.accountInformation.bank }} 
+                    </label>
+                 </div>
 
-              <div>  Banco : 
-                <label> 
-                {{item.accountInformation.bank }} 
-                </label>
-              </div>
-
-              <div>  Fecha Ultima Transaccion: 
-                <label> 
-                 {{ item.lastTransactionDate| stringDate  }}  
-                </label>  
-              </div>
-               
+                 <div  class="cardDetail__item"  >
+                  <span   class="cardDetail__item__title">  Fecha Ultima Transaccion:    </span>
+                    <label> 
+                      {{ item.lastTransactionDate| stringDate  }}  
+                    </label> 
+                 </div>
           </div> 
 
           <div *ngIf="item.cardcredit"> 
