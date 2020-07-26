@@ -41,7 +41,11 @@
 
 ## breakpoints
 
-Solo se crearon 2 breakpoints  básicos uno en el componete header y el otro en el componete productos
+Solo se crearon 2 breakpoints  básicos uno en el componete header y el otro en el componete productos 
+
+se valida si el tamaño corresponde al de un dispositivo movil 
+ -  primer breakpoint (header) cambia el estilo del menu de informacion del usuario 
+ - segundo breakpint (productos) modifica  el estilo de las tarjetas de produtos.
 
 
 ## Notas:
@@ -59,9 +63,7 @@ Solo se crearon 2 breakpoints  básicos uno en el componete header y el otro en 
 ## URL 
 
 http://alexistestadl.brazilsouth.azurecontainer.io/
-=======
   
   
 
->>>>>>> 03f0c293ffab4826223772c7452af31b31d72e02
 # ADLTest
