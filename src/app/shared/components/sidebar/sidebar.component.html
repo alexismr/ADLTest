@@ -1,13 +1,15 @@
 
-<div class="sidebar" *ngFor="let item of options">  
-  <hr>
-    <div class="sidebar__header">
-      {{item}} 
+  <div class="sidebar">  
+       <label class="sidebar__title">  {{titleProduct}}</label>
+     <ng-container  *ngFor="let item of options"  >
+      <div class="sidebar__header">
+        <span  class="sidebar__header__item" >   {{item}}  </span> 
+      </div>
+    </ng-container>
     </div>
-    <div class="sidebar__body">
-      <ng-content></ng-content>
-    </div>
-  </div>
- 
+   
 
-       
+
+
+
+

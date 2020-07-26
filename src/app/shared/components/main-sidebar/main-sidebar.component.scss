@@ -1,0 +1,44 @@
+@import '../../../../styles/variables.scss';
+.sidebar {
+        &__header {
+             padding: 4px;
+            font-size: 12px;
+            margin: auto;
+            text-align: center;
+            font-family: $RThin;
+            cursor: pointer;
+        }
+
+        &__body {
+          padding: 1px 1px;
+          background: inherit;
+          overflow-y: hidden;
+          font-size: 10px;
+        
+        }
+        
+      }
+
+
+
+
+// .sidenav-container {
+//   height: 100%;
+// }
+
+// .sidenav {
+//   width: 200px;
+// }
+
+// .sidenav .mat-toolbar {
+//   background: inherit;
+// }
+
+// .mat-toolbar.mat-primary {
+//   position: sticky;
+//   top: 0;
+//   z-index: 1;
+// }
+
+
+

@@ -61,10 +61,13 @@ $colors: (
 );
 
 
-$screen-breakpoints: (
+
+$grid-breakpoints: (
   xs: 0,
-  sm: 576px,
+  sm: 480px,
   md: 768px,
-  lg: 992px,
+  lg: 1024px,
   xl: 1200px
 ) !default;
+
+

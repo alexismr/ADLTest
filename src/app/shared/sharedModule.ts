@@ -1,19 +1,31 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { MatSliderModule } from '@angular/material/slider';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
+import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { MatToolbarModule } from '@angular/material/toolbar';
+
+
+
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { HeaderComponent } from './components/header/header.component';
 import { ProgressbarComponent } from './components/progressbar/progressbar/progressbar.component';
-import { MatSliderModule } from '@angular/material/slider';
-import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { SlideButtonComponent } from './components/slideButton/slide-button.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { MainSidebarComponent } from './components/main-sidebar/main-sidebar.component';
+
+
 import { StringDatePipe } from './pipe/stringdate.pipe';
 import { VisamasterPipe } from './pipe/visamaster.pipe';
 import { CreditcardnumberPipe } from './pipe/creditcardnumber.pipe';
 
 
-import {MatProgressBarModule} from '@angular/material/progress-bar';
+
+
 @NgModule({
     imports: [
         CommonModule,
@@ -21,7 +33,11 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
         MatSliderModule,
         MatSlideToggleModule,
         FontAwesomeModule,
-        MatProgressBarModule
+        MatProgressBarModule,
+        MatButtonModule,
+        MatIconModule,
+        MatToolbarModule,
+  
     ],
 
     declarations: [
@@ -31,7 +47,9 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
         ProgressbarComponent,
         StringDatePipe,
         VisamasterPipe,
-        CreditcardnumberPipe
+        CreditcardnumberPipe,
+        MainSidebarComponent
+        
     ],
 
     exports: [
@@ -41,7 +59,9 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
         ProgressbarComponent,
         StringDatePipe,
         VisamasterPipe,
-        CreditcardnumberPipe
+        CreditcardnumberPipe,
+        MainSidebarComponent
+        
     ]
 })
 

@@ -1,8 +1,6 @@
 
 import { Component, OnInit, Input } from '@angular/core';
 
-
-
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
@@ -11,18 +9,22 @@ import { Component, OnInit, Input } from '@angular/core';
 export class SidebarComponent implements OnInit{
 
 
-  @Input() id: string;
-  @Input() title = "";
-
+  titleProduct:string= "TUS PRODUCTOS" 
   options = ["PAGOS","TRANSFERENCIAS","CERTIFICADOS","SEGURIDAD"]
-  
+  isMenuOpen:boolean = false;
   constructor() {
     
   }
 
   ngOnInit() {
-    const sidebar = this;
-
-
   }
+
+  public onSidenavClick(): void {
+    this.isMenuOpen = false;
+  }
+  
+  public onToggleSidenav = () => { 
+ 
+  }
+
 }

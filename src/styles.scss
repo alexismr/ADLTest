@@ -120,9 +120,8 @@ html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 
-@import './styles/variables.scss';
+@import './styles/_variables.scss';
 @import './styles/grid_Home.scss';
-@import './styles/app.scss';
   
 
 .logo {
@@ -142,12 +141,4 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
       }
 }
 
-.products__nav {
-    margin-top:  35%;
-    display: flex;
-    justify-content:center;
-    & label {
-        font-size: 12;
-    }
-}
 

@@ -1,0 +1,22 @@
+
+ @import './variables.scss';
+
+@mixin respond-to($name) {
+    @if map-has-key($grid-breakpoints, $name) {
+      @media (min-width: map-get($grid-breakpoints, $name)) {
+        @content;
+      }
+    }
+    @else {
+      @warn "no hay cobfiguracion para el breakpoint : `#{$grid-breakpoints}`. ";
+        
+    }
+  }
+
+
+// personalizado 
+  @mixin rwd($screen) {
+    @media (min-width: $screen+'px') {
+        @content;
+    }
+ }
