@@ -1,24 +1,31 @@
-<mat-toolbar color="primary" *ngIf="isHandset$ | async">
-  <button 
-    type="button"
-    aria-label="Toggle sidenav"
-    mat-icon-button
-    (click)="drawer.toggle()"
-    >
-    <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-  </button>
-  <span>{{title}}</span>
-</mat-toolbar>
-  
+
+<div class="main"  [ngClass]="{burgger__open: toggle}"  >
+  <div class="logo"> 
+    <img   class="logo__img" src="../assets/imgs/logo.jpeg" alt="Test">
+  </div>
+
+  <div class="menu-btn" [ngClass]="{open: toggle}" (click)="onToggle()" >
+    <div class="menu-btn__burger">
+    </div>
+  </div>
+
+   <div  [ngClass]="(toggle)?'sidebarmb':'sidebar'"  >  
+    <label class="sidebar__title">  {{titleProduct}}</label>
+     <ng-container  *ngFor="let item of options"  >
+      <div class="sidebar__header" [ngClass]="{'active':toggle}" (click)="onToggle()" >
+        <span  class="sidebar__header__item" >   {{item}}  </span> 
+      </div>
+      </ng-container>
+  </div>
 
 
-  <app-sidebar>
-
-  </app-sidebar>
+</div>
 
 
 
 
+
+ 
 
 
 

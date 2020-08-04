@@ -12,7 +12,6 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 
 
 
-import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { HeaderComponent } from './components/header/header.component';
 import { ProgressbarComponent } from './components/progressbar/progressbar/progressbar.component';
 import { SlideButtonComponent } from './components/slideButton/slide-button.component';
@@ -41,7 +40,6 @@ import { CreditcardnumberPipe } from './pipe/creditcardnumber.pipe';
     ],
 
     declarations: [
-        SidebarComponent,
         HeaderComponent,
         SlideButtonComponent,
         ProgressbarComponent,
@@ -53,7 +51,6 @@ import { CreditcardnumberPipe } from './pipe/creditcardnumber.pipe';
     ],
 
     exports: [
-        SidebarComponent,
         HeaderComponent,
         SlideButtonComponent,
         ProgressbarComponent,
